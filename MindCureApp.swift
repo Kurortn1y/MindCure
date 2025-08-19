@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MindCureApp: App {
+    
+    @State private var coordinator = Coordinator()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoordinatorView()
         }
+        .environment(coordinator)
     }
 }

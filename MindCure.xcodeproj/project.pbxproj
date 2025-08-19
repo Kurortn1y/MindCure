@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7F69254D2E54AD8A00AD8CEF /* MindCureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69254B2E54AD8A00AD8CEF /* MindCureApp.swift */; };
+		7F69254E2E54AD8A00AD8CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F6925492E54AD8A00AD8CEF /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		7F69253B2E54ABC600AD8CEF /* MindCure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindCure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F6925492E54AD8A00AD8CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F69254B2E54AD8A00AD8CEF /* MindCureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindCureApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +39,8 @@
 		7F6925322E54ABC600AD8CEF = {
 			isa = PBXGroup;
 			children = (
+				7F69254B2E54AD8A00AD8CEF /* MindCureApp.swift */,
+				7F6925492E54AD8A00AD8CEF /* Assets.xcassets */,
 				7F69253D2E54ABC600AD8CEF /* MindCure */,
 				7F69253C2E54ABC600AD8CEF /* Products */,
 			);
@@ -109,6 +118,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F69254E2E54AD8A00AD8CEF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F69254D2E54AD8A00AD8CEF /* MindCureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
