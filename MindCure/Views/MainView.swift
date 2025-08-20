@@ -10,14 +10,24 @@ import SwiftUI
 struct MainView: View {
     
     @Environment(Coordinator.self) var coordinator
-    
+
     var body: some View {
-        Text("Hello, Main View!")
-        Button("go therapy") {
-            coordinator.push(page: .threapyScreen)
+        ZStack {
+            Color.stockFon
+                .ignoresSafeArea()
+            VStack {
+                Button("go session") {
+                    coordinator.open(.sessionCover)
+                }
+                .padding(50)
+                Button("go Ball") {
+                    coordinator.open(.ballCover)
+                }
+            }
         }
     }
 }
+
 
 #Preview {
     MainView()

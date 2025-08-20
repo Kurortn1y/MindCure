@@ -7,25 +7,33 @@
 
 import SwiftUI
 
+#Preview {
+    CoordinatorView()
+        .environment(Coordinator())
+}
+
 struct CoordinatorView: View {
     
     @Environment(Coordinator.self) var coordinator
-    
     
     var body: some View {
         
         @Bindable var coordinator = coordinator
         
         NavigationStack(path: $coordinator.path) {
-            coordinator.build(.main)
-                .navigationDestination(for: Page.self) { page in
-                    coordinator.build(page)
-                }
+            TabView {
+                coordinator.build(.main)
+                    .tabItem { Text("1") }
+                
+                SettingsView()
+                    .tabItem { Text("2") }
+            }
+            .navigationDestination(for: Page.self) { page in
+                coordinator.build(page)
+            }
+            .fullScreenCover(item: $coordinator.cover) { cover in
+                coordinator.buildC(cover)
+            }
         }
     }
-}
-
-#Preview {
-    CoordinatorView()
-        .environment(Coordinator())
 }

@@ -9,9 +9,19 @@ import Foundation
 import Observation
 import SwiftUI
 
+
+enum FullScreencover: String, Identifiable {
+    
+    case ballCover
+    case sessionCover
+    
+    var id: String {
+        self.rawValue
+    }
+}
+
 enum Page: Hashable  {
     case main
-    case threapyScreen
 }
 
 
@@ -26,6 +36,7 @@ final class Coordinator {
     }
     
     var path = NavigationPath()
+    var cover: FullScreencover?
     
     
     //MARK: - Navigation Methods
@@ -37,6 +48,9 @@ final class Coordinator {
         path.removeLast(path.count)
     }
     
+    func open(_ cover: FullScreencover) {
+        self.cover = cover
+    }
     
     
     //MARK: - Build Methods
@@ -46,14 +60,17 @@ final class Coordinator {
         switch page {
         case .main:
             MainView()
-        case .threapyScreen:
+        }
+    }
+    
+    @ViewBuilder
+    func buildC(_ cover: FullScreencover) -> some View {
+        switch cover {
+        case .sessionCover:
+            SessionView()
+        case .ballCover:
             TherapyView()
         }
     }
     
-    
-    
-    
-    
-    //MARK: -
 }
